@@ -34,12 +34,10 @@ public class MoveZeroes
     class Solution {
         public void moveZeroes(int[] nums) {
             int pos = 0;
-            int temp = 0;
             for(int i = 0;i < nums.length;i++){
                 if(nums[i] != 0){
-                    temp = nums[i];
-                    nums[i] = nums[pos];
-                    nums[pos++] = temp;
+                    nums[pos++] = nums[i];
+                    if(pos -  1 != i)nums[i] = 0;
                 }
             }
         }
